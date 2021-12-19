@@ -8,36 +8,38 @@ function computerPlay() {
 }
 
 computerPlay();
-let playerSelection='scissors';
+
+let playerSelection='ScISSors';
+playerSelection=playerSelection.toLowerCase();
 
 function oneRound() {
     if (computerSelection==='rock'&&playerSelection==='rock') {
-        console.log('Computer chose rock. It\'s a tie...')
+        return ('Computer chose rock. It\'s a tie...')
     }
     else if (computerSelection==='rock'&&playerSelection==='paper') {
-        console.log('Computer chose rock. You won!')
+        return ('Computer chose rock. You won!')
     }
     else if (computerSelection==='rock'&&playerSelection==='scissors') {
-        console.log('Computer chose rock. You lose. :(')
+        return ('Computer chose rock. You lose. :(')
     }
     else if (computerSelection==='paper'&&playerSelection==='rock') {
-        console.log('Computer chose paper. You lose. :(')
+        return ('Computer chose paper. You lose. :(')
     }
     else if (computerSelection==='paper'&&playerSelection==='paper') {
-        console.log('Computer chose paper. It\'s a tie...')
+        return ('Computer chose paper. It\'s a tie...')
     }
     else if (computerSelection==='paper'&&playerSelection==='scissors') {
-        console.log('Computer chose paper. You win!')
+        return ('Computer chose paper. You win!')
     }
     else if (computerSelection==='scissors'&&playerSelection==='rock') {
-        console.log('Computer chose scissors. You win!')
+        return ('Computer chose scissors. You win!')
     }
     else if (computerSelection==='scissors'&&playerSelection==='paper') {
-        console.log('Computer chose scissors. You lose. :(')
+        return ('Computer chose scissors. You lose. :(')
     }
     else if (computerSelection==='scissors'&&playerSelection==='scissors') {
-        console.log('Computer chose scissors. It\'s a tie...')
+        return ('Computer chose scissors. It\'s a tie...')
     }
 }
 
-oneRound(computerSelection, playerSelection);
+console.log(oneRound(computerSelection, playerSelection));
