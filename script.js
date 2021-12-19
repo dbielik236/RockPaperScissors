@@ -8,8 +8,7 @@ function computerPlay() {
 }
 
 computerPlay();
-
-let playerSelection='ScISSors';
+let playerSelection=prompt('Choose rock, paper, or scissors.');
 playerSelection=playerSelection.toLowerCase();
 
 function oneRound() {
