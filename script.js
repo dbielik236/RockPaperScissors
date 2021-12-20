@@ -7,11 +7,13 @@ function computerPlay() {
     
 }
 
-computerPlay();
-let playerSelection=prompt('Choose rock, paper, or scissors.');
-playerSelection=playerSelection.toLowerCase();
 
-function oneRound() {
+let playerSelection=prompt('Type rock, paper, or scissors to play against the computer.');
+playerSelection = playerSelection.toLowerCase();
+ 
+    computerPlay();
+
+    function oneRound() {
     if (computerSelection==='rock'&&playerSelection==='rock') {
         return ('Computer chose rock. It\'s a tie...')
     }
@@ -38,7 +40,11 @@ function oneRound() {
     }
     else if (computerSelection==='scissors'&&playerSelection==='scissors') {
         return ('Computer chose scissors. It\'s a tie...')
+    }    else return ('Please type rock, paper, or scissors to start.')
     }
-}
 
+
+
+console.log(`You chose ` + playerSelection);
 console.log(oneRound(computerSelection, playerSelection));
+
