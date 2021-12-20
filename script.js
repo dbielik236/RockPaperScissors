@@ -11,7 +11,7 @@ let playerPromptSelection=prompt('Type rock, paper, or scissors to play against 
 playerSelection = playerPromptSelection.toLowerCase();
 }
 
-    function oneRound(computerSelection, playerSelection) {
+    function winnerLoser(computerSelection, playerSelection) {
     if (computerSelection==='rock'&&playerSelection==='rock') {
         return ('Computer chose rock. It\'s a tie...')
     }
@@ -40,16 +40,20 @@ playerSelection = playerPromptSelection.toLowerCase();
         return ('Computer chose scissors. It\'s a tie...')
     }    else return ('Please type rock, paper, or scissors to start.')}
 
-function game() {
+function oneRound() {
     computerPlay();
     playerPrompt();
     console.log('You chose '+playerSelection+'.')
-    return oneRound(computerSelection, playerSelection);
+    console.log(winnerLoser(computerSelection, playerSelection));
 }
 
-console.log(game());
-console.log(game());
-console.log(game());
-console.log(game());
-console.log(game());
+function game() {
+    oneRound();
+    oneRound();
+    oneRound();
+    oneRound();
+    oneRound();
+}
 
+game();
+console.log('Game over. Refresh the page to start again.')
