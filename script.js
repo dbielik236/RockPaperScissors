@@ -3,15 +3,13 @@
 function computerPlay() {
     const computerChoiceArray = ['rock', 'paper', 'scissors'];
     const random = Math.floor(Math.random()*computerChoiceArray.length);
-    return computerSelection = computerChoiceArray[random];
-    
+    return computerSelection = computerChoiceArray[random];   
 }
 
-
-let playerSelection=prompt('Type rock, paper, or scissors to play against the computer.');
-playerSelection = playerSelection.toLowerCase();
- 
-    computerPlay();
+function playerPrompt() {
+let playerPromptSelection=prompt('Type rock, paper, or scissors to play against the computer.');
+playerSelection = playerPromptSelection.toLowerCase();
+}
 
     function oneRound() {
     if (computerSelection==='rock'&&playerSelection==='rock') {
@@ -40,11 +38,13 @@ playerSelection = playerSelection.toLowerCase();
     }
     else if (computerSelection==='scissors'&&playerSelection==='scissors') {
         return ('Computer chose scissors. It\'s a tie...')
-    }    else return ('Please type rock, paper, or scissors to start.')
-    }
+    }    else return ('Please type rock, paper, or scissors to start.')}
 
+function game() {
+    computerPlay();
+    playerPrompt();
+    return oneRound();
+}
 
-
-console.log(`You chose ` + playerSelection);
-console.log(oneRound(computerSelection, playerSelection));
+console.log(game());
 
