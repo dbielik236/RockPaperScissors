@@ -11,7 +11,7 @@ let playerPromptSelection=prompt('Type rock, paper, or scissors to play against 
 playerSelection = playerPromptSelection.toLowerCase();
 }
 
-    function oneRound() {
+    function oneRound(computerSelection, playerSelection) {
     if (computerSelection==='rock'&&playerSelection==='rock') {
         return ('Computer chose rock. It\'s a tie...')
     }
@@ -43,8 +43,13 @@ playerSelection = playerPromptSelection.toLowerCase();
 function game() {
     computerPlay();
     playerPrompt();
-    return oneRound();
+    console.log('You chose '+playerSelection+'.')
+    return oneRound(computerSelection, playerSelection);
 }
 
+console.log(game());
+console.log(game());
+console.log(game());
+console.log(game());
 console.log(game());
 
