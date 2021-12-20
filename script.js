@@ -1,3 +1,5 @@
+
+
 function oneRound() {
     function computerPlay() {
         const computerChoiceArray = ['rock', 'paper', 'scissors'];
@@ -14,47 +16,45 @@ function oneRound() {
 
     function winnerLoser(computerSelection, playerSelection) {
         if (computerSelection==='rock'&&playerSelection==='rock') {
-            return ('Computer chose rock. It\'s a tie...')
+            return (rockRock='Computer chose rock. It\'s a tie...')
         }
         else if (computerSelection==='rock'&&playerSelection==='paper') {
-            return ('Computer chose rock. You won!')
+            return (rockPaper='Computer chose rock. You win the round!')
         }
         else if (computerSelection==='rock'&&playerSelection==='scissors') {
-            return ('Computer chose rock. You lose. :(')
+            return (rockScissors='Computer chose rock. You lose the round. :(')
         }
         else if (computerSelection==='paper'&&playerSelection==='rock') {
-            return ('Computer chose paper. You lose. :(')
+            return (paperRock='Computer chose paper. You lose the round. :(')
         }
         else if (computerSelection==='paper'&&playerSelection==='paper') {
-            return ('Computer chose paper. It\'s a tie...')
+            return (paperPaper='Computer chose paper. It\'s a tie...')
         }
         else if (computerSelection==='paper'&&playerSelection==='scissors') {
-            return ('Computer chose paper. You win!')
+            return (paperScissors='Computer chose paper. You win the round!')
         }
         else if (computerSelection==='scissors'&&playerSelection==='rock') {
-            return ('Computer chose scissors. You win!')
+            return (scissorsRock='Computer chose scissors. You win the round!')
         }
         else if (computerSelection==='scissors'&&playerSelection==='paper') {
-            return ('Computer chose scissors. You lose. :(')
+            return (scissorsPaper='Computer chose scissors. You lose the round. :(')
         }
         else if (computerSelection==='scissors'&&playerSelection==='scissors') {
-            return ('Computer chose scissors. It\'s a tie...')
+            return (scissorsScissors='Computer chose scissors. It\'s a tie...')
         }    
         else return ('Invalid choice.')
     }
     winnerLoser();
     console.log('You chose '+playerSelection+'.')
-    console.log(winnerLoser(computerSelection, playerSelection));
+    return (winnerLoser(computerSelection, playerSelection));
 }
 
 function game() {
-    let playerPoints=0;
-    let computerPoints=0;
-    oneRound();
-    oneRound();
-    oneRound();
-    oneRound();
-    oneRound();
+    console.log(oneRound());
+    console.log(oneRound());
+    console.log(oneRound());
+    console.log(oneRound());
+    console.log(oneRound());
 }
 
 game();
