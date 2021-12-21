@@ -8,7 +8,7 @@ function oneRound() {
     }
     function playerPrompt() {
         let playerPromptSelection=prompt('Type rock, paper, or scissors to play against the computer. Best of 5 rounds wins.');
-        playerSelection = playerPromptSelection.toLowerCase();
+        return playerSelection = playerPromptSelection.toLowerCase();
     }
         
     computerPlay();
@@ -55,8 +55,8 @@ function oneRound() {
     }
     winnerLoser();
     pointsAllocation();
-    console.log('You chose '+playerSelection+'. '+winnerLoser());
-    return (pointsAllocation());   
+    return (playerSelection), (outcome);
+    
 }
 
 function game() {
@@ -74,22 +74,27 @@ function game() {
         }
 
     oneRound();
+    console.log('You chose '+playerSelection+'. '+outcome);
     pointsWinner();   
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    oneRound()
+    oneRound();
+    console.log('You chose '+playerSelection+'. '+outcome);
     pointsWinner();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    oneRound()
+    oneRound();
+    console.log('You chose '+playerSelection+'. '+outcome);
     pointsWinner();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    oneRound()
+    oneRound();
+    console.log('You chose '+playerSelection+'. '+outcome);
     pointsWinner();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    oneRound()
+    oneRound();
+    console.log('You chose '+playerSelection+'. '+outcome);
     pointsWinner();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
