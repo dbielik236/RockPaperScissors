@@ -7,7 +7,7 @@ function oneRound() {
         return computerSelection = computerChoiceArray[random];   
     }
     function playerPrompt() {
-        let playerPromptSelection=prompt('Type rock, paper, or scissors to play against the computer. Best of 5 rounds wins.');
+        let playerPromptSelection=prompt('Type rock, paper, or scissors to play against the computer. Most points after 5 rounds wins.');
         return playerSelection = playerPromptSelection.toLowerCase();
     }
         
@@ -54,9 +54,7 @@ function oneRound() {
         else return winner='No points'
     }
     winnerLoser();
-    pointsAllocation();
-    return (playerSelection), (outcome);
-    
+    pointsAllocation();   
 }
 
 function game() {
@@ -105,7 +103,7 @@ function game() {
         else if (computerPoints>playerPoints) {
             return gameResult='You lost the game. But don\'t let it bother you!'
         }
-        else return gameResult='The game was a draw. You both won?!'
+        else return gameResult='The game was a draw. So... you both won?!'
     }
     console.log(gameWinner());
 }
