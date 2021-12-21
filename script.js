@@ -14,45 +14,54 @@ function oneRound() {
     computerPlay();
     playerPrompt();
 
-    function winnerLoser(computerSelection, playerSelection) {
+    function winnerLoser() {
         if (computerSelection==='rock'&&playerSelection==='rock') {
-            return (rockRock='Computer chose rock. It\'s a tie...')
+            return (outcome='Computer chose rock. It\'s a tie...')
         }
         else if (computerSelection==='rock'&&playerSelection==='paper') {
-            return (rockPaper='Computer chose rock. You win the round!')
+            return (outcome='Computer chose rock. You win the round!')
         }
         else if (computerSelection==='rock'&&playerSelection==='scissors') {
-            return (rockScissors='Computer chose rock. You lose the round. :(')
+            return (outcome='Computer chose rock. You lose the round. :(')
         }
         else if (computerSelection==='paper'&&playerSelection==='rock') {
-            return (paperRock='Computer chose paper. You lose the round. :(')
+            return (outcome='Computer chose paper. You lose the round. :(')
         }
         else if (computerSelection==='paper'&&playerSelection==='paper') {
-            return (paperPaper='Computer chose paper. It\'s a tie...')
+            return (outcome='Computer chose paper. It\'s a tie...')
         }
         else if (computerSelection==='paper'&&playerSelection==='scissors') {
-            return (paperScissors='Computer chose paper. You win the round!')
+            return (outcome='Computer chose paper. You win the round!')
         }
         else if (computerSelection==='scissors'&&playerSelection==='rock') {
-            return (scissorsRock='Computer chose scissors. You win the round!')
+            return (outcome='Computer chose scissors. You win the round!')
         }
         else if (computerSelection==='scissors'&&playerSelection==='paper') {
-            return (scissorsPaper='Computer chose scissors. You lose the round. :(')
+            return (outcome='Computer chose scissors. You lose the round. :(')
         }
         else if (computerSelection==='scissors'&&playerSelection==='scissors') {
-            return (scissorsScissors='Computer chose scissors. It\'s a tie...')
+            return (outcome='Computer chose scissors. It\'s a tie...')
         }    
         else return ('Invalid choice.')
     }
+    function pointsAllocation() {
+        let playerPoints=0;
+        let computerPoints=0;
+        if (outcome==='Computer chose rock. You win the round!' || outcome==='Computer chose paper. You win the round!'||outcome==='Computer chose scissors. You win the round!') {
+            return playerPoints+=1
+        }
+        else if (outcome==='Computer chose rock. You lose the round. :('||outcome==='Computer chose paper. You lose the round. :('||outcome==='Computer chose scissors. You lose the round. :(') {
+            return computerPoints+=1
+        }
+        else return ('no points awarded')
+    }
     winnerLoser();
-    console.log('You chose '+playerSelection+'.')
-    return (winnerLoser(computerSelection, playerSelection));
+    console.log(pointsAllocation());
+    console.log('You chose '+playerSelection+'.');
+    return (winnerLoser());
 }
 
 function game() {
-    console.log(oneRound());
-    console.log(oneRound());
-    console.log(oneRound());
     console.log(oneRound());
     console.log(oneRound());
 }
