@@ -70,7 +70,7 @@ function game() {
         else if (winner==='Player Wins') {
             return playerPoints+=1
         }
-        else return 'No points awarded this round'
+        else return (null)
         }
 
     oneRound();
