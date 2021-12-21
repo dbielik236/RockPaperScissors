@@ -62,8 +62,8 @@ function oneRound() {
 function game() {
     let playerPoints=0;
     let computerPoints=0;
-    function firstRound() { 
-        oneRound()
+
+    function pointsWinner() {
         if (winner==='Computer Wins') {
             return computerPoints+=1
         }
@@ -71,81 +71,39 @@ function game() {
             return playerPoints+=1
         }
         else return 'No points awarded this round'
-    }
-    firstRound();
+        }
+
+    oneRound();
+    pointsWinner();   
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    function secondRound() { 
-        oneRound()
-        if (winner==='Computer Wins') {
-            return computerPoints+=1
-        }
-        else if (winner==='Player Wins') {
-            return playerPoints+=1
-        }
-        else if (winner==='No points') {
-            return ('No points awarded this round.')
-        }
-    }
-    secondRound();
+    oneRound()
+    pointsWinner();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-   
-    function thirdRound() { 
-        oneRound()
-        if (winner==='Computer Wins') {
-            return computerPoints+=1
-        }
-        else if (winner==='Player Wins') {
-            return playerPoints+=1
-        }
-        else if (winner==='No points') {
-            return ('No points awarded this round.')
-        }
-    }
-    thirdRound();
+    oneRound()
+    pointsWinner();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    function fourthRound() { 
-        oneRound()
-        if (winner==='Computer Wins') {
-            return computerPoints+=1
-        }
-        else if (winner==='Player Wins') {
-            return playerPoints+=1
-        }
-        else if (winner==='No points') {
-            return ('No points awarded this round.')
-        }
-    }
-    fourthRound();
+    oneRound()
+    pointsWinner();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    function fiveRound() { 
-        oneRound()
-        if (winner==='Computer Wins') {
-            return computerPoints+=1
-        }
-        else if (winner==='Player Wins') {
-            return playerPoints+=1
-        }
-        else if (winner==='No points') {
-            return ('No points awarded this round.')
-        }
-    }
-    fiveRound();
+    oneRound()
+    pointsWinner();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
     function gameWinner() {
         if (playerPoints>computerPoints) {
-            return playerWinsGame='You won the game. Great job!'
+            return gameResult='You won the game. Great job!'
         }
         else if (computerPoints>playerPoints) {
-            return computerWinsGame='You lost the game. But don\'t let it bother you!'
+            return gameResult='You lost the game. But don\'t let it bother you!'
         }
+        else return gameResult='The game was a draw. You both won?!'
     }
     console.log(gameWinner());
-    }
+}
 
 game();
 console.log('Refresh the page to play again.')
