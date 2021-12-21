@@ -7,7 +7,8 @@ function oneRound() {
         return computerSelection = computerChoiceArray[random];   
     }
     function playerPrompt() {
-        let playerPromptSelection=prompt('Type rock, paper, or scissors to play against the computer. Most points after 5 rounds wins.');
+        let playerPromptSelection=prompt
+        ('Type rock, paper, or scissors to play against the computer. Most points after 5 rounds wins.');
         return playerSelection = playerPromptSelection.toLowerCase();
     }
         
@@ -45,10 +46,14 @@ function oneRound() {
         else return ('Invalid choice.')
     }
     function pointsAllocation() {
-        if (outcome==='Computer chose rock. You win the round!' || outcome==='Computer chose paper. You win the round!'||outcome==='Computer chose scissors. You win the round!') {
+        if (outcome==='Computer chose rock. You win the round!' || 
+            outcome==='Computer chose paper. You win the round!'||
+            outcome==='Computer chose scissors. You win the round!') {
             return winner='Player Wins'
         }
-        else if (outcome==='Computer chose rock. You lose the round. :('||outcome==='Computer chose paper. You lose the round. :('||outcome==='Computer chose scissors. You lose the round. :(') {
+        else if (outcome==='Computer chose rock. You lose the round. :('||
+            outcome==='Computer chose paper. You lose the round. :('||
+            outcome==='Computer chose scissors. You lose the round. :(') {
             return winner='Computer Wins'
         }
         else return winner='No points'
