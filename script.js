@@ -135,7 +135,17 @@ function game() {
     }
     fiveRound();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
+    
+    function gameWinner() {
+        if (playerPoints>computerPoints) {
+            return playerWinsGame='You won the game. Great job!'
+        }
+        else if (computerPoints>playerPoints) {
+            return computerWinsGame='You lost the game. But don\'t let it bother you!'
+        }
+    }
+    console.log(gameWinner());
     }
 
 game();
-console.log('Game over. Refresh the page to start again.')
+console.log('Refresh the page to play again.')
