@@ -1,21 +1,21 @@
 
 
-function oneRound() {
+function playRound() {
     function computerPlay() {
         const computerChoiceArray = ['rock', 'paper', 'scissors'];
         const random = Math.floor(Math.random()*computerChoiceArray.length);
         return computerSelection = computerChoiceArray[random];   
     }
-    function playerPrompt() {
+    function promptPlayer() {
         let playerPromptSelection=prompt
         ('Type rock, paper, or scissors to play against the computer. Most points after 5 rounds wins.');
         return playerSelection = playerPromptSelection.toLowerCase();
     }
         
     computerPlay();
-    playerPrompt();
+    promptPlayer();
 
-    function winnerLoser() {
+    function determineWinner() {
         if (computerSelection==='rock'&&playerSelection==='rock') {
             return (outcome='Computer chose rock. It\'s a tie...')
         }
@@ -45,7 +45,7 @@ function oneRound() {
         }    
         else return ('Invalid choice.')
     }
-    function pointsAllocation() {
+    function allocatingPoints() {
         if (outcome==='Computer chose rock. You win the round!' || 
             outcome==='Computer chose paper. You win the round!'||
             outcome==='Computer chose scissors. You win the round!') {
@@ -58,15 +58,15 @@ function oneRound() {
         }
         else return winner='No points'
     }
-    winnerLoser();
-    pointsAllocation();   
+    determineWinner();
+    allocatingPoints();   
 }
 
 function game() {
     let playerPoints=0;
     let computerPoints=0;
 
-    function pointsWinner() {
+    function assignPoints() {
         if (winner==='Computer Wins') {
             return computerPoints+=1
         }
@@ -76,32 +76,32 @@ function game() {
         else return (null)
         }
 
-    oneRound();
+    playRound();
     console.log('You chose '+playerSelection+'. '+outcome);
-    pointsWinner();   
+    assignPoints();   
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    oneRound();
+    playRound();
     console.log('You chose '+playerSelection+'. '+outcome);
-    pointsWinner();
+    assignPoints();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    oneRound();
+    playRound();
     console.log('You chose '+playerSelection+'. '+outcome);
-    pointsWinner();
+    assignPoints();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    oneRound();
+    playRound();
     console.log('You chose '+playerSelection+'. '+outcome);
-    pointsWinner();
+    assignPoints();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    oneRound();
+    playRound();
     console.log('You chose '+playerSelection+'. '+outcome);
-    pointsWinner();
+    assignPoints();
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
     
-    function gameWinner() {
+    function determineWinner() {
         if (playerPoints>computerPoints) {
             return gameResult='You won the game. Great job!'
         }
@@ -110,7 +110,7 @@ function game() {
         }
         else return gameResult='The game was a draw. So... you both won?!'
     }
-    console.log(gameWinner());
+    console.log(determineWinner());
 }
 
 game();
