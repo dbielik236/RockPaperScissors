@@ -45,27 +45,97 @@ function oneRound() {
         else return ('Invalid choice.')
     }
     function pointsAllocation() {
-        let playerPoints=0;
-        let computerPoints=0;
         if (outcome==='Computer chose rock. You win the round!' || outcome==='Computer chose paper. You win the round!'||outcome==='Computer chose scissors. You win the round!') {
-            return playerPoints+=1
+            return winner='Player Wins'
         }
         else if (outcome==='Computer chose rock. You lose the round. :('||outcome==='Computer chose paper. You lose the round. :('||outcome==='Computer chose scissors. You lose the round. :(') {
-            return computerPoints+=1
+            return winner='Computer Wins'
         }
-        else return ('no points awarded')
+        else return winner='No points'
     }
     winnerLoser();
-    console.log(pointsAllocation());
-    console.log('You chose '+playerSelection+'.');
-    return (winnerLoser());
+    pointsAllocation();
+    console.log('You chose '+playerSelection+'. '+winnerLoser());
+    return (pointsAllocation());   
 }
 
 function game() {
-    console.log(oneRound());
-    console.log(oneRound());
-}
+    let playerPoints=0;
+    let computerPoints=0;
+    function firstRound() { 
+        oneRound()
+        if (winner==='Computer Wins') {
+            return computerPoints+=1
+        }
+        else if (winner==='Player Wins') {
+            return playerPoints+=1
+        }
+        else return 'No points awarded this round'
+    }
+    firstRound();
+    console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
+    
+    function secondRound() { 
+        oneRound()
+        if (winner==='Computer Wins') {
+            return computerPoints+=1
+        }
+        else if (winner==='Player Wins') {
+            return playerPoints+=1
+        }
+        else if (winner==='No points') {
+            return ('No points awarded this round.')
+        }
+    }
+    secondRound();
+    console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
+    
+   
+    function thirdRound() { 
+        oneRound()
+        if (winner==='Computer Wins') {
+            return computerPoints+=1
+        }
+        else if (winner==='Player Wins') {
+            return playerPoints+=1
+        }
+        else if (winner==='No points') {
+            return ('No points awarded this round.')
+        }
+    }
+    thirdRound();
+    console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
+    
+    function fourthRound() { 
+        oneRound()
+        if (winner==='Computer Wins') {
+            return computerPoints+=1
+        }
+        else if (winner==='Player Wins') {
+            return playerPoints+=1
+        }
+        else if (winner==='No points') {
+            return ('No points awarded this round.')
+        }
+    }
+    fourthRound();
+    console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
+    
+    function fiveRound() { 
+        oneRound()
+        if (winner==='Computer Wins') {
+            return computerPoints+=1
+        }
+        else if (winner==='Player Wins') {
+            return playerPoints+=1
+        }
+        else if (winner==='No points') {
+            return ('No points awarded this round.')
+        }
+    }
+    fiveRound();
+    console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
+    }
 
 game();
-
 console.log('Game over. Refresh the page to start again.')
