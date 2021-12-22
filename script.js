@@ -81,7 +81,7 @@ function game() {
             }
 
     assignPoints();   
-    console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
+    console.log('Player points '+playerPoints, 'Computer points '+computerPoints);
     }
 
     function determineWinner() {
@@ -93,9 +93,8 @@ function game() {
         }
         else return gameResult='The game was a draw. So... you both won?!'
     }
-
     determineWinner();
 }
 game();
 console.log(gameResult);
-console.log('Refresh the page to play again.')
+console.log('Refresh the page to play again.');
