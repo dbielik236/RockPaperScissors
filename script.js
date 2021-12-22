@@ -68,7 +68,7 @@ function game() {
     
     for (let i = 1; i < 6; i++) {   
         playRound();
-        console.log('You chose '+playerSelection+'. '+outcome);
+        console.log(`You chose ${playerSelection}. ${outcome}`);
     
         function assignPoints() {
             if (winner==='Computer Wins') {
@@ -81,7 +81,7 @@ function game() {
             }
 
     assignPoints();   
-    console.log('Player points '+playerPoints, 'Computer points '+computerPoints);
+    console.log(`Player points: ${playerPoints}  Computer points: ${computerPoints}`);
     }
 
     function determineWinner() {
