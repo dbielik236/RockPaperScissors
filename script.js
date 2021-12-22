@@ -65,42 +65,25 @@ function playRound() {
 function game() {
     let playerPoints=0;
     let computerPoints=0;
+    
+    for (let i = 1; i < 6; i++) {   
+        playRound();
+        console.log('You chose '+playerSelection+'. '+outcome);
+    
+        function assignPoints() {
+            if (winner==='Computer Wins') {
+                return computerPoints+=1
+            }
+            else if (winner==='Player Wins') {
+                return playerPoints+=1
+            }
+            else return (null)
+            }
 
-    function assignPoints() {
-        if (winner==='Computer Wins') {
-            return computerPoints+=1
-        }
-        else if (winner==='Player Wins') {
-            return playerPoints+=1
-        }
-        else return (null)
-        }
-
-    playRound();
-    console.log('You chose '+playerSelection+'. '+outcome);
     assignPoints();   
     console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
-    
-    playRound();
-    console.log('You chose '+playerSelection+'. '+outcome);
-    assignPoints();
-    console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
-    
-    playRound();
-    console.log('You chose '+playerSelection+'. '+outcome);
-    assignPoints();
-    console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
-    
-    playRound();
-    console.log('You chose '+playerSelection+'. '+outcome);
-    assignPoints();
-    console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
-    
-    playRound();
-    console.log('You chose '+playerSelection+'. '+outcome);
-    assignPoints();
-    console.log('Player points '+playerPoints, 'Computer points '+computerPoints)
-    
+    }
+
     function determineWinner() {
         if (playerPoints>computerPoints) {
             return gameResult='You won the game. Great job!'
@@ -110,8 +93,9 @@ function game() {
         }
         else return gameResult='The game was a draw. So... you both won?!'
     }
-    console.log(determineWinner());
-}
 
+    determineWinner();
+}
 game();
+console.log(gameResult);
 console.log('Refresh the page to play again.')
