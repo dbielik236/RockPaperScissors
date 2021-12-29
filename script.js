@@ -38,8 +38,8 @@ function playRound(computerSelection, playerSelection) {
         }    
         else return ('Invalid choice.')
     }
-    console.log("You chose "+playerSelection);
-    console.log(determineWinner());
+    determineWinner();
+    console.log(outcome);
 
     function allocatingPoints() {
         if (outcome==='Computer chose rock. You win the round!' || 
@@ -54,7 +54,7 @@ function playRound(computerSelection, playerSelection) {
         }
         else return winner='No points'
     }
-    console.log(allocatingPoints());   
+     allocatingPoints();
 
 
     //this should be in a loop
@@ -95,14 +95,19 @@ rockBtn.addEventListener('click', () => {
     const playerSelection='rock';
     playRound(computerSelection, playerSelection);
 
+    //player DOM
     const container = document.querySelector('#playerSelection');
-
     const content = document.createElement('div');
     content.classList.add('content');
     content.textContent = 'Player choice: '+playerSelection;
-
     container.appendChild(content);
     
+    //computer DOM
+    const cmptSelection = document.querySelector('#computerSelection');
+    const cmptText = document.createElement('div');
+    cmptText.classList.add('cmptContent');
+    cmptText.textContent = 'Computer choice: '+computerSelection;
+    cmptSelection.appendChild(cmptText);
 });
 
 
@@ -111,15 +116,19 @@ paperBtn.addEventListener('click', () => {
     const playerSelection='paper';
     playRound(computerSelection, playerSelection);
 
+    //player DOM
     const container = document.querySelector('#playerSelection');
-
     const content = document.createElement('div');
     content.classList.add('content');
     content.textContent = 'Player choice: '+playerSelection;
-
     container.appendChild(content);
-
-
+    
+    //computer DOM
+    const cmptSelection = document.querySelector('#computerSelection');
+    const cmptText = document.createElement('div');
+    cmptText.classList.add('cmptContent');
+    cmptText.textContent = 'Computer choice: '+computerSelection;
+    cmptSelection.appendChild(cmptText);
 });
 
 const scissorsBtn = document.querySelector('.scissorsButton');
@@ -127,13 +136,19 @@ scissorsBtn.addEventListener('click', () => {
     const playerSelection='scissors';
     playRound(computerSelection, playerSelection);
 
+    //player DOM
     const container = document.querySelector('#playerSelection');
-
     const content = document.createElement('div');
     content.classList.add('content');
     content.textContent = 'Player choice: '+playerSelection;
-
     container.appendChild(content);
+    
+    //computer DOM
+    const cmptSelection = document.querySelector('#computerSelection');
+    const cmptText = document.createElement('div');
+    cmptText.classList.add('cmptContent');
+    cmptText.textContent = 'Computer choice: '+computerSelection;
+    cmptSelection.appendChild(cmptText);
 });
 
 
