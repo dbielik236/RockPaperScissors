@@ -12,19 +12,19 @@ function playerChoice() {
         const playerSelection='rock';
         playRound(computerSelection, playerSelection);
 
-        //player DOM
-        const container = document.querySelector('#playerSelection');
-        const content = document.createElement('div');
-        content.classList.add('content');
-        content.textContent = 'Player choice: '+playerSelection;
-        container.appendChild(content);
-        
-        //computer DOM
-        const cmptSelection = document.querySelector('#computerSelection');
-        const cmptText = document.createElement('div');
-        cmptText.classList.add('cmptContent');
-        cmptText.textContent = 'Computer choice: '+computerSelection;
-        cmptSelection.appendChild(cmptText);
+    //player DOM
+    const container = document.querySelector('#playerSelection');
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'Player choice: '+playerSelection;
+    container.appendChild(content);
+
+    //computer DOM
+    const cmptSelection = document.querySelector('#computerSelection');
+    const cmptText = document.createElement('div');
+    cmptText.classList.add('cmptContent');
+    cmptText.textContent = 'Computer choice: '+computerSelection;
+    cmptSelection.appendChild(cmptText); 
     });
 
 
@@ -69,8 +69,8 @@ function playerChoice() {
     });
 }
 playerChoice();
-
-function playRound(computerSelection, playerSelection) {    
+function playRound(computerSelection, playerSelection) { 
+    
     function determineWinner() {
         if (computerSelection==='rock'&&playerSelection=='rock') {
             return (outcome='Computer chose rock. It\'s a tie...')
@@ -103,12 +103,12 @@ function playRound(computerSelection, playerSelection) {
     }
     determineWinner();
 
-    //outcome DOM
-    const roundResult = document.querySelector('#roundResults');
-    const results = document.createElement('div');
-    results.classList.add('winnerRound');
-    results.textContent = outcome;
-    roundResult.appendChild(results);
+//outcome DOM
+const roundResult = document.querySelector('#roundResults');
+const results = document.createElement('div');
+results.classList.add('winnerRound');
+results.textContent = outcome;
+roundResult.appendChild(results);
 
     function allocatingPoints() {
         if (outcome==='Computer chose rock. You win the round!' || 
