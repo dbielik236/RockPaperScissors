@@ -4,7 +4,6 @@
         const random = Math.floor(Math.random()*computerChoiceArray.length);
         return computerSelection = computerChoiceArray[random];   
     }
-
     computerPlay();
 
 function playRound(computerSelection, playerSelection) {    
@@ -39,7 +38,14 @@ function playRound(computerSelection, playerSelection) {
         else return ('Invalid choice.')
     }
     determineWinner();
-    console.log(outcome);
+
+    //outcome DOM
+    const roundResult = document.querySelector('#roundResults');
+    const results = document.createElement('div');
+    results.classList.add('winnerRound');
+    results.textContent = outcome;
+    roundResult.appendChild(results);
+
 
     function allocatingPoints() {
         if (outcome==='Computer chose rock. You win the round!' || 
@@ -54,7 +60,7 @@ function playRound(computerSelection, playerSelection) {
         }
         else return winner='No points'
     }
-     allocatingPoints();
+    allocatingPoints();
 
 
     //this should be in a loop
@@ -71,9 +77,8 @@ function playRound(computerSelection, playerSelection) {
             else return;
             }
 
-    assignPoints();   
-    console.log(`Player points: ${playerPoints}  Computer points: ${computerPoints}`);
-        }
+    console.log(assignPoints());   
+        }       
 /*
     function determineWinner() {
         if (playerPoints>computerPoints) {
