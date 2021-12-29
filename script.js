@@ -1,22 +1,15 @@
 
-
-function playRound() {
     function computerPlay() {
         const computerChoiceArray = ['rock', 'paper', 'scissors'];
         const random = Math.floor(Math.random()*computerChoiceArray.length);
         return computerSelection = computerChoiceArray[random];   
     }
-    function promptPlayer() {
-        let playerPromptSelection=prompt
-        ('Type rock, paper, or scissors to play against the computer. Most points after 5 rounds wins.');
-        return playerSelection = playerPromptSelection.toLowerCase();
-    }
-        
-    computerPlay();
-    promptPlayer();
 
+    computerPlay();
+
+function playRound(computerSelection, playerSelection) {    
     function determineWinner() {
-        if (computerSelection==='rock'&&playerSelection==='rock') {
+        if (computerSelection==='rock'&&playerSelection=='rock') {
             return (outcome='Computer chose rock. It\'s a tie...')
         }
         else if (computerSelection==='rock'&&playerSelection==='paper') {
@@ -25,7 +18,7 @@ function playRound() {
         else if (computerSelection==='rock'&&playerSelection==='scissors') {
             return (outcome='Computer chose rock. You lose the round. :(')
         }
-        else if (computerSelection==='paper'&&playerSelection==='rock') {
+        else if (computerSelection==='paper'&&playerSelection=='rock') {
             return (outcome='Computer chose paper. You lose the round. :(')
         }
         else if (computerSelection==='paper'&&playerSelection==='paper') {
@@ -34,7 +27,7 @@ function playRound() {
         else if (computerSelection==='paper'&&playerSelection==='scissors') {
             return (outcome='Computer chose paper. You win the round!')
         }
-        else if (computerSelection==='scissors'&&playerSelection==='rock') {
+        else if (computerSelection==='scissors'&&playerSelection=='rock') {
             return (outcome='Computer chose scissors. You win the round!')
         }
         else if (computerSelection==='scissors'&&playerSelection==='paper') {
@@ -45,8 +38,10 @@ function playRound() {
         }    
         else return ('Invalid choice.')
     }
-    
-    function allocatingPoints() {
+    console.log("You chose "+playerSelection);
+    console.log(determineWinner());
+}
+    /*function allocatingPoints() {
         if (outcome==='Computer chose rock. You win the round!' || 
             outcome==='Computer chose paper. You win the round!'||
             outcome==='Computer chose scissors. You win the round!') {
@@ -62,14 +57,10 @@ function playRound() {
     determineWinner();
     allocatingPoints();   
 }
-
-//function game() {
+*/
+/*
     let playerPoints=0;
     let computerPoints=0;
-    
-    //for (let i = 1; i < 6; i++) {   
-        playRound();
-        console.log(`You chose ${playerSelection}. ${outcome}`);
     
         function assignPoints() {
             if (winner==='Computer Wins') {
@@ -83,7 +74,7 @@ function playRound() {
 
     assignPoints();   
     console.log(`Player points: ${playerPoints}  Computer points: ${computerPoints}`);
-    //}
+    
 
     function determineWinner() {
         if (playerPoints>computerPoints) {
@@ -95,17 +86,28 @@ function playRound() {
         else return gameResult='The game was a draw. So... you both won?!'
     }
     determineWinner();
-//}
-//game();
+*/
+
 
 const rockBtn = document.querySelector('.rockButton');
-rockBtn.addEventListener('click', playRound);
+rockBtn.addEventListener('click', () => {
+    const playerSelection='rock';
+    playRound(computerSelection, playerSelection);
+});
+
 
 const paperBtn = document.querySelector('.paperButton');
-paperBtn.addEventListener('click', playRound);
+paperBtn.addEventListener('click', () => {
+    const playerSelection='paper';
+    playRound(computerSelection, playerSelection);
+});
 
 const scissorsBtn = document.querySelector('.scissorsButton');
-scissorsBtn.addEventListener('click', playRound);
+scissorsBtn.addEventListener('click', () => {
+    const playerSelection='scissors';
+    playRound(computerSelection, playerSelection);
+});
 
-console.log(gameResult);
-console.log('Refresh the page to play again.');
+
+
+
