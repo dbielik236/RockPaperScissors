@@ -45,6 +45,7 @@ function playRound() {
         }    
         else return ('Invalid choice.')
     }
+    
     function allocatingPoints() {
         if (outcome==='Computer chose rock. You win the round!' || 
             outcome==='Computer chose paper. You win the round!'||
@@ -62,11 +63,11 @@ function playRound() {
     allocatingPoints();   
 }
 
-function game() {
+//function game() {
     let playerPoints=0;
     let computerPoints=0;
     
-    for (let i = 1; i < 6; i++) {   
+    //for (let i = 1; i < 6; i++) {   
         playRound();
         console.log(`You chose ${playerSelection}. ${outcome}`);
     
@@ -77,12 +78,12 @@ function game() {
             else if (winner==='Player Wins') {
                 return playerPoints+=1
             }
-            else return (null)
+            else return;
             }
 
     assignPoints();   
     console.log(`Player points: ${playerPoints}  Computer points: ${computerPoints}`);
-    }
+    //}
 
     function determineWinner() {
         if (playerPoints>computerPoints) {
@@ -94,7 +95,17 @@ function game() {
         else return gameResult='The game was a draw. So... you both won?!'
     }
     determineWinner();
-}
-game();
+//}
+//game();
+
+const rockBtn = document.querySelector('.rockButton');
+rockBtn.addEventListener('click', playRound);
+
+const paperBtn = document.querySelector('.paperButton');
+paperBtn.addEventListener('click', playRound);
+
+const scissorsBtn = document.querySelector('.scissorsButton');
+scissorsBtn.addEventListener('click', playRound);
+
 console.log(gameResult);
 console.log('Refresh the page to play again.');
