@@ -40,8 +40,8 @@ function playRound(computerSelection, playerSelection) {
     }
     console.log("You chose "+playerSelection);
     console.log(determineWinner());
-}
-    /*function allocatingPoints() {
+
+    function allocatingPoints() {
         if (outcome==='Computer chose rock. You win the round!' || 
             outcome==='Computer chose paper. You win the round!'||
             outcome==='Computer chose scissors. You win the round!') {
@@ -54,11 +54,10 @@ function playRound(computerSelection, playerSelection) {
         }
         else return winner='No points'
     }
-    determineWinner();
-    allocatingPoints();   
-}
-*/
-/*
+    console.log(allocatingPoints());   
+
+
+    //this should be in a loop
     let playerPoints=0;
     let computerPoints=0;
     
@@ -74,8 +73,8 @@ function playRound(computerSelection, playerSelection) {
 
     assignPoints();   
     console.log(`Player points: ${playerPoints}  Computer points: ${computerPoints}`);
-    
-
+        }
+/*
     function determineWinner() {
         if (playerPoints>computerPoints) {
             return gameResult='You won the game. Great job!'
@@ -89,10 +88,21 @@ function playRound(computerSelection, playerSelection) {
 */
 
 
+
+
 const rockBtn = document.querySelector('.rockButton');
 rockBtn.addEventListener('click', () => {
     const playerSelection='rock';
     playRound(computerSelection, playerSelection);
+
+    const container = document.querySelector('#playerSelection');
+
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'Player choice: '+playerSelection;
+
+    container.appendChild(content);
+    
 });
 
 
@@ -100,12 +110,30 @@ const paperBtn = document.querySelector('.paperButton');
 paperBtn.addEventListener('click', () => {
     const playerSelection='paper';
     playRound(computerSelection, playerSelection);
+
+    const container = document.querySelector('#playerSelection');
+
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'Player choice: '+playerSelection;
+
+    container.appendChild(content);
+
+
 });
 
 const scissorsBtn = document.querySelector('.scissorsButton');
 scissorsBtn.addEventListener('click', () => {
     const playerSelection='scissors';
     playRound(computerSelection, playerSelection);
+
+    const container = document.querySelector('#playerSelection');
+
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'Player choice: '+playerSelection;
+
+    container.appendChild(content);
 });
 
 
