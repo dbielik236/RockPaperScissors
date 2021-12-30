@@ -194,31 +194,31 @@ function playRound() {
 
             function determineWinner() {
                 if (computerSelection==='rock'&&playerSelection=='rock') {
-                    return (outcome='Computer chose rock. It\'s a tie...')
+                    return (outcome='It\'s a tie...')
                 }
                 else if (computerSelection==='rock'&&playerSelection==='paper') {
-                    return (outcome='Computer chose rock. You win the round!')
+                    return (outcome='You win the round!')
                 }
                 else if (computerSelection==='rock'&&playerSelection==='scissors') {
-                    return (outcome='Computer chose rock. You lose the round. :(')
+                    return (outcome='You lose the round. :(')
                 }
                 else if (computerSelection==='paper'&&playerSelection=='rock') {
-                    return (outcome='Computer chose paper. You lose the round. :(')
+                    return (outcome='You lose the round. :(')
                 }
                 else if (computerSelection==='paper'&&playerSelection==='paper') {
-                    return (outcome='Computer chose paper. It\'s a tie...')
+                    return (outcome='It\'s a tie...')
                 }
                 else if (computerSelection==='paper'&&playerSelection==='scissors') {
-                    return (outcome='Computer chose paper. You win the round!')
+                    return (outcome='You win the round!')
                 }
                 else if (computerSelection==='scissors'&&playerSelection=='rock') {
-                    return (outcome='Computer chose scissors. You win the round!')
+                    return (outcome='You win the round!')
                 }
                 else if (computerSelection==='scissors'&&playerSelection==='paper') {
-                    return (outcome='Computer chose scissors. You lose the round. :(')
+                    return (outcome='You lose the round. :(')
                 }
                 else if (computerSelection==='scissors'&&playerSelection==='scissors') {
-                    return (outcome='Computer chose scissors. It\'s a tie...')
+                    return (outcome='It\'s a tie...')
                 }    
                 }
 
@@ -231,14 +231,14 @@ function playRound() {
                 roundResult.appendChild(results);
 
                 function allocatingPoints() {
-                    if (outcome=='Computer chose rock. You win the round!' || 
-                        outcome=='Computer chose paper. You win the round!'||
-                        outcome=='Computer chose scissors. You win the round!') {
+                    if (outcome=='You win the round!' || 
+                        outcome=='You win the round!'||
+                        outcome=='You win the round!') {
                         return winner='Player Wins'
                     }
-                    else if (outcome=='Computer chose rock. You lose the round. :('||
-                        outcome=='Computer chose paper. You lose the round. :('||
-                        outcome=='Computer chose scissors. You lose the round. :(') {
+                    else if (outcome=='You lose the round. :('||
+                        outcome=='You lose the round. :('||
+                        outcome=='You lose the round. :(') {
                         return winner='Computer Wins'
                     }
                     else return winner='No points'
@@ -255,9 +255,13 @@ function playRound() {
                 }
                 
                 assignPoints();
-                console.log(computerPoints, playerPoints)   
-                       
-
+                  
+                //outcome DOM
+                const roundScore = document.querySelector('#runningScore');
+                const score = document.createElement('div');
+                score.classList.add('roundScore');
+                score.textContent = 'Computer points: '+computerPoints+'  Player points: ' +playerPoints;
+                roundScore.appendChild(score);
 
         });    
         const paperBtn = document.querySelector('.paperButton');
@@ -282,31 +286,31 @@ function playRound() {
 
             function determineWinner() {
                 if (computerSelection==='rock'&&playerSelection=='rock') {
-                    return (outcome='Computer chose rock. It\'s a tie...')
+                    return (outcome='It\'s a tie...')
                 }
                 else if (computerSelection==='rock'&&playerSelection==='paper') {
-                    return (outcome='Computer chose rock. You win the round!')
+                    return (outcome='You win the round!')
                 }
                 else if (computerSelection==='rock'&&playerSelection==='scissors') {
-                    return (outcome='Computer chose rock. You lose the round. :(')
+                    return (outcome='You lose the round. :(')
                 }
                 else if (computerSelection==='paper'&&playerSelection=='rock') {
-                    return (outcome='Computer chose paper. You lose the round. :(')
+                    return (outcome='You lose the round. :(')
                 }
                 else if (computerSelection==='paper'&&playerSelection==='paper') {
-                    return (outcome='Computer chose paper. It\'s a tie...')
+                    return (outcome='It\'s a tie...')
                 }
                 else if (computerSelection==='paper'&&playerSelection==='scissors') {
-                    return (outcome='Computer chose paper. You win the round!')
+                    return (outcome='You win the round!')
                 }
                 else if (computerSelection==='scissors'&&playerSelection=='rock') {
-                    return (outcome='Computer chose scissors. You win the round!')
+                    return (outcome='You win the round!')
                 }
                 else if (computerSelection==='scissors'&&playerSelection==='paper') {
-                    return (outcome='Computer chose scissors. You lose the round. :(')
+                    return (outcome='You lose the round. :(')
                 }
                 else if (computerSelection==='scissors'&&playerSelection==='scissors') {
-                    return (outcome='Computer chose scissors. It\'s a tie...')
+                    return (outcome='It\'s a tie...')
                 }    
                 }
                 determineWinner();
@@ -318,14 +322,14 @@ function playRound() {
                 roundResult.appendChild(results);
 
                 function allocatingPoints() {
-                    if (outcome=='Computer chose rock. You win the round!' || 
-                        outcome=='Computer chose paper. You win the round!'||
-                        outcome=='Computer chose scissors. You win the round!') {
+                    if (outcome=='You win the round!' || 
+                        outcome=='You win the round!'||
+                        outcome=='You win the round!') {
                         return winner='Player Wins'
                     }
-                    else if (outcome=='Computer chose rock. You lose the round. :('||
-                        outcome=='Computer chose paper. You lose the round. :('||
-                        outcome=='Computer chose scissors. You lose the round. :(') {
+                    else if (outcome=='You lose the round. :('||
+                        outcome=='You lose the round. :('||
+                        outcome=='You lose the round. :(') {
                         return winner='Computer Wins'
                     }
                     else return winner='No points'
@@ -342,7 +346,12 @@ function playRound() {
                 }
                 
                 assignPoints();
-                console.log(computerPoints, playerPoints) 
+                //outcome DOM
+                const roundScore = document.querySelector('#runningScore');
+                const score = document.createElement('div');
+                score.classList.add('roundScore');
+                score.textContent = 'Computer points: '+computerPoints+'  Player points: ' +playerPoints;
+                roundScore.appendChild(score);
         });
 
         const scissorsBtn = document.querySelector('.scissorsButton');
@@ -367,31 +376,31 @@ function playRound() {
 
             function determineWinner() {
                 if (computerSelection==='rock'&&playerSelection=='rock') {
-                    return (outcome='Computer chose rock. It\'s a tie...')
+                    return (outcome='It\'s a tie...')
                 }
                 else if (computerSelection==='rock'&&playerSelection==='paper') {
-                    return (outcome='Computer chose rock. You win the round!')
+                    return (outcome='You win the round!')
                 }
                 else if (computerSelection==='rock'&&playerSelection==='scissors') {
-                    return (outcome='Computer chose rock. You lose the round. :(')
+                    return (outcome='You lose the round. :(')
                 }
                 else if (computerSelection==='paper'&&playerSelection=='rock') {
-                    return (outcome='Computer chose paper. You lose the round. :(')
+                    return (outcome='You lose the round. :(')
                 }
                 else if (computerSelection==='paper'&&playerSelection==='paper') {
-                    return (outcome='Computer chose paper. It\'s a tie...')
+                    return (outcome='It\'s a tie...')
                 }
                 else if (computerSelection==='paper'&&playerSelection==='scissors') {
-                    return (outcome='Computer chose paper. You win the round!')
+                    return (outcome='You win the round!')
                 }
                 else if (computerSelection==='scissors'&&playerSelection=='rock') {
-                    return (outcome='Computer chose scissors. You win the round!')
+                    return (outcome='You win the round!')
                 }
                 else if (computerSelection==='scissors'&&playerSelection==='paper') {
-                    return (outcome='Computer chose scissors. You lose the round. :(')
+                    return (outcome='You lose the round. :(')
                 }
                 else if (computerSelection==='scissors'&&playerSelection==='scissors') {
-                    return (outcome='Computer chose scissors. It\'s a tie...')
+                    return (outcome='It\'s a tie...')
                 }    
                 }
                 determineWinner();
@@ -403,14 +412,14 @@ function playRound() {
                 roundResult.appendChild(results);
 
                 function allocatingPoints() {
-                    if (outcome=='Computer chose rock. You win the round!' || 
-                        outcome=='Computer chose paper. You win the round!'||
-                        outcome=='Computer chose scissors. You win the round!') {
+                    if (outcome=='You win the round!' || 
+                        outcome=='You win the round!'||
+                        outcome=='You win the round!') {
                         return winner='Player Wins'
                     }
-                    else if (outcome=='Computer chose rock. You lose the round. :('||
-                        outcome=='Computer chose paper. You lose the round. :('||
-                        outcome=='Computer chose scissors. You lose the round. :(') {
+                    else if (outcome=='You lose the round. :('||
+                        outcome=='You lose the round. :('||
+                        outcome=='You lose the round. :(') {
                         return winner='Computer Wins'
                     }
                     else return winner='No points'
@@ -427,7 +436,13 @@ function playRound() {
                 }
                 
                 assignPoints();
-                console.log(computerPoints, playerPoints) 
+                
+                //outcome DOM
+                const roundScore = document.querySelector('#runningScore');
+                const score = document.createElement('div');
+                score.classList.add('roundScore');
+                score.textContent = 'Computer points: '+computerPoints+'  Player points: ' +playerPoints;
+                roundScore.appendChild(score);
                      
         });
         
