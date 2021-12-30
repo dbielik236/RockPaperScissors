@@ -1,4 +1,5 @@
 
+/*
 function computerPlay() {
     const computerChoiceArray = ['rock', 'paper', 'scissors'];
     const random = Math.floor(Math.random()*computerChoiceArray.length);
@@ -12,19 +13,19 @@ function playerChoice() {
         const playerSelection='rock';
         playRound(computerSelection, playerSelection);
 
-    //player DOM
-    const container = document.querySelector('#playerSelection');
-    const content = document.createElement('div');
-    content.classList.add('content');
-    content.textContent = 'Player choice: '+playerSelection;
-    container.appendChild(content);
-
-    //computer DOM
-    const cmptSelection = document.querySelector('#computerSelection');
-    const cmptText = document.createElement('div');
-    cmptText.classList.add('cmptContent');
-    cmptText.textContent = 'Computer choice: '+computerSelection;
-    cmptSelection.appendChild(cmptText); 
+        //player DOM
+        const container = document.querySelector('#playerSelection');
+        const content = document.createElement('div');
+        content.classList.add('content');
+        content.textContent = 'Player choice: '+playerSelection;
+        container.appendChild(content);
+        
+        //computer DOM
+        const cmptSelection = document.querySelector('#computerSelection');
+        const cmptText = document.createElement('div');
+        cmptText.classList.add('cmptContent');
+        cmptText.textContent = 'Computer choice: '+computerSelection;
+        cmptSelection.appendChild(cmptText);
     });
 
 
@@ -69,8 +70,8 @@ function playerChoice() {
     });
 }
 playerChoice();
-function playRound(computerSelection, playerSelection) { 
-    
+
+function playRound(computerSelection, playerSelection) {    
     function determineWinner() {
         if (computerSelection==='rock'&&playerSelection=='rock') {
             return (outcome='Computer chose rock. It\'s a tie...')
@@ -103,12 +104,12 @@ function playRound(computerSelection, playerSelection) {
     }
     determineWinner();
 
-//outcome DOM
-const roundResult = document.querySelector('#roundResults');
-const results = document.createElement('div');
-results.classList.add('winnerRound');
-results.textContent = outcome;
-roundResult.appendChild(results);
+    //outcome DOM
+    const roundResult = document.querySelector('#roundResults');
+    const results = document.createElement('div');
+    results.classList.add('winnerRound');
+    results.textContent = outcome;
+    roundResult.appendChild(results);
 
     function allocatingPoints() {
         if (outcome==='Computer chose rock. You win the round!' || 
@@ -144,7 +145,7 @@ function game() {
     assignPoints();
     console.log(computerPoints, playerPoints)   
     }       
-/*
+
     function determineWinner() {
         if (playerPoints>computerPoints) {
             return gameResult='You won the game. Great job!'
@@ -155,11 +156,202 @@ function game() {
         else return gameResult='The game was a draw. So... you both won?!'
     }
     determineWinner();
-*/
+
 }
     
+*/
 
+function playRound() {
 
+    function computerPlay() {
+        const computerChoiceArray = ['rock', 'paper', 'scissors'];
+        const random = Math.floor(Math.random()*computerChoiceArray.length);
+        return computerSelection = computerChoiceArray[random];   
+    }
+
+    function initiateRound() {
+        const rockBtn = document.querySelector('.rockButton');
+        rockBtn.addEventListener('click', () => {
+            const playerSelection='rock';
+
+            computerPlay();
+            
+            //player DOM
+            const container = document.querySelector('#playerSelection');
+            const content = document.createElement('div');
+            content.classList.add('content');
+            content.textContent = 'Player choice: '+playerSelection;
+            container.appendChild(content);
+            
+            //computer DOM
+            const cmptSelection = document.querySelector('#computerSelection');
+            const cmptText = document.createElement('div');
+            cmptText.classList.add('cmptContent');
+            cmptText.textContent = 'Computer choice: '+computerSelection;
+            cmptSelection.appendChild(cmptText);
+
+            function determineWinner() {
+                if (computerSelection==='rock'&&playerSelection=='rock') {
+                    return (outcome='Computer chose rock. It\'s a tie...')
+                }
+                else if (computerSelection==='rock'&&playerSelection==='paper') {
+                    return (outcome='Computer chose rock. You win the round!')
+                }
+                else if (computerSelection==='rock'&&playerSelection==='scissors') {
+                    return (outcome='Computer chose rock. You lose the round. :(')
+                }
+                else if (computerSelection==='paper'&&playerSelection=='rock') {
+                    return (outcome='Computer chose paper. You lose the round. :(')
+                }
+                else if (computerSelection==='paper'&&playerSelection==='paper') {
+                    return (outcome='Computer chose paper. It\'s a tie...')
+                }
+                else if (computerSelection==='paper'&&playerSelection==='scissors') {
+                    return (outcome='Computer chose paper. You win the round!')
+                }
+                else if (computerSelection==='scissors'&&playerSelection=='rock') {
+                    return (outcome='Computer chose scissors. You win the round!')
+                }
+                else if (computerSelection==='scissors'&&playerSelection==='paper') {
+                    return (outcome='Computer chose scissors. You lose the round. :(')
+                }
+                else if (computerSelection==='scissors'&&playerSelection==='scissors') {
+                    return (outcome='Computer chose scissors. It\'s a tie...')
+                }    
+                }
+
+                determineWinner();
+                //outcome DOM
+                const roundResult = document.querySelector('#roundResults');
+                const results = document.createElement('div');
+                results.classList.add('winnerRound');
+                results.textContent = outcome;
+                roundResult.appendChild(results);
+
+        });    
+        const paperBtn = document.querySelector('.paperButton');
+        paperBtn.addEventListener('click', () => {
+            const playerSelection='paper';
+
+            computerPlay();
+            
+            //player DOM
+            const container = document.querySelector('#playerSelection');
+            const content = document.createElement('div');
+            content.classList.add('content');
+            content.textContent = 'Player choice: '+playerSelection;
+            container.appendChild(content);
+            
+            //computer DOM
+            const cmptSelection = document.querySelector('#computerSelection');
+            const cmptText = document.createElement('div');
+            cmptText.classList.add('cmptContent');
+            cmptText.textContent = 'Computer choice: '+computerSelection;
+            cmptSelection.appendChild(cmptText);
+
+            function determineWinner() {
+                if (computerSelection==='rock'&&playerSelection=='rock') {
+                    return (outcome='Computer chose rock. It\'s a tie...')
+                }
+                else if (computerSelection==='rock'&&playerSelection==='paper') {
+                    return (outcome='Computer chose rock. You win the round!')
+                }
+                else if (computerSelection==='rock'&&playerSelection==='scissors') {
+                    return (outcome='Computer chose rock. You lose the round. :(')
+                }
+                else if (computerSelection==='paper'&&playerSelection=='rock') {
+                    return (outcome='Computer chose paper. You lose the round. :(')
+                }
+                else if (computerSelection==='paper'&&playerSelection==='paper') {
+                    return (outcome='Computer chose paper. It\'s a tie...')
+                }
+                else if (computerSelection==='paper'&&playerSelection==='scissors') {
+                    return (outcome='Computer chose paper. You win the round!')
+                }
+                else if (computerSelection==='scissors'&&playerSelection=='rock') {
+                    return (outcome='Computer chose scissors. You win the round!')
+                }
+                else if (computerSelection==='scissors'&&playerSelection==='paper') {
+                    return (outcome='Computer chose scissors. You lose the round. :(')
+                }
+                else if (computerSelection==='scissors'&&playerSelection==='scissors') {
+                    return (outcome='Computer chose scissors. It\'s a tie...')
+                }    
+                }
+                determineWinner();
+                //outcome DOM
+                const roundResult = document.querySelector('#roundResults');
+                const results = document.createElement('div');
+                results.classList.add('winnerRound');
+                results.textContent = outcome;
+                roundResult.appendChild(results);
+        });
+
+        const scissorsBtn = document.querySelector('.scissorsButton');
+        scissorsBtn.addEventListener('click', () => {
+            const playerSelection='scissors';
+
+            computerPlay();
+            
+            //player DOM
+            const container = document.querySelector('#playerSelection');
+            const content = document.createElement('div');
+            content.classList.add('content');
+            content.textContent = 'Player choice: '+playerSelection;
+            container.appendChild(content);
+            
+            //computer DOM
+            const cmptSelection = document.querySelector('#computerSelection');
+            const cmptText = document.createElement('div');
+            cmptText.classList.add('cmptContent');
+            cmptText.textContent = 'Computer choice: '+computerSelection;
+            cmptSelection.appendChild(cmptText);
+
+            function determineWinner() {
+                if (computerSelection==='rock'&&playerSelection=='rock') {
+                    return (outcome='Computer chose rock. It\'s a tie...')
+                }
+                else if (computerSelection==='rock'&&playerSelection==='paper') {
+                    return (outcome='Computer chose rock. You win the round!')
+                }
+                else if (computerSelection==='rock'&&playerSelection==='scissors') {
+                    return (outcome='Computer chose rock. You lose the round. :(')
+                }
+                else if (computerSelection==='paper'&&playerSelection=='rock') {
+                    return (outcome='Computer chose paper. You lose the round. :(')
+                }
+                else if (computerSelection==='paper'&&playerSelection==='paper') {
+                    return (outcome='Computer chose paper. It\'s a tie...')
+                }
+                else if (computerSelection==='paper'&&playerSelection==='scissors') {
+                    return (outcome='Computer chose paper. You win the round!')
+                }
+                else if (computerSelection==='scissors'&&playerSelection=='rock') {
+                    return (outcome='Computer chose scissors. You win the round!')
+                }
+                else if (computerSelection==='scissors'&&playerSelection==='paper') {
+                    return (outcome='Computer chose scissors. You lose the round. :(')
+                }
+                else if (computerSelection==='scissors'&&playerSelection==='scissors') {
+                    return (outcome='Computer chose scissors. It\'s a tie...')
+                }    
+                }
+                determineWinner();
+                //outcome DOM
+                const roundResult = document.querySelector('#roundResults');
+                const results = document.createElement('div');
+                results.classList.add('winnerRound');
+                results.textContent = outcome;
+                roundResult.appendChild(results);
+
+        });
+    }
+    
+initiateRound();
+
+}
+
+playRound();
 
 
 
