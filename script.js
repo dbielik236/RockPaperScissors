@@ -162,6 +162,8 @@ function game() {
 */
 
 function playRound() {
+    let playerPoints = 0;
+    let computerPoints = 0;
 
     function computerPlay() {
         const computerChoiceArray = ['rock', 'paper', 'scissors'];
@@ -228,6 +230,35 @@ function playRound() {
                 results.textContent = outcome;
                 roundResult.appendChild(results);
 
+                function allocatingPoints() {
+                    if (outcome=='Computer chose rock. You win the round!' || 
+                        outcome=='Computer chose paper. You win the round!'||
+                        outcome=='Computer chose scissors. You win the round!') {
+                        return winner='Player Wins'
+                    }
+                    else if (outcome=='Computer chose rock. You lose the round. :('||
+                        outcome=='Computer chose paper. You lose the round. :('||
+                        outcome=='Computer chose scissors. You lose the round. :(') {
+                        return winner='Computer Wins'
+                    }
+                    else return winner='No points'
+                }
+                allocatingPoints();
+                function assignPoints() {
+                    if (winner=='Computer Wins') {
+                        return computerPoints+=1
+                    }
+                    else if (winner=='Player Wins') {
+                    return playerPoints+=1
+                    }
+                    else return;
+                }
+                
+                assignPoints();
+                console.log(computerPoints, playerPoints)   
+                       
+
+
         });    
         const paperBtn = document.querySelector('.paperButton');
         paperBtn.addEventListener('click', () => {
@@ -285,6 +316,33 @@ function playRound() {
                 results.classList.add('winnerRound');
                 results.textContent = outcome;
                 roundResult.appendChild(results);
+
+                function allocatingPoints() {
+                    if (outcome=='Computer chose rock. You win the round!' || 
+                        outcome=='Computer chose paper. You win the round!'||
+                        outcome=='Computer chose scissors. You win the round!') {
+                        return winner='Player Wins'
+                    }
+                    else if (outcome=='Computer chose rock. You lose the round. :('||
+                        outcome=='Computer chose paper. You lose the round. :('||
+                        outcome=='Computer chose scissors. You lose the round. :(') {
+                        return winner='Computer Wins'
+                    }
+                    else return winner='No points'
+                }
+                allocatingPoints();
+                function assignPoints() {
+                    if (winner=='Computer Wins') {
+                        return computerPoints+=1
+                    }
+                    else if (winner=='Player Wins') {
+                    return playerPoints+=1
+                    }
+                    else return;
+                }
+                
+                assignPoints();
+                console.log(computerPoints, playerPoints) 
         });
 
         const scissorsBtn = document.querySelector('.scissorsButton');
@@ -344,9 +402,36 @@ function playRound() {
                 results.textContent = outcome;
                 roundResult.appendChild(results);
 
+                function allocatingPoints() {
+                    if (outcome=='Computer chose rock. You win the round!' || 
+                        outcome=='Computer chose paper. You win the round!'||
+                        outcome=='Computer chose scissors. You win the round!') {
+                        return winner='Player Wins'
+                    }
+                    else if (outcome=='Computer chose rock. You lose the round. :('||
+                        outcome=='Computer chose paper. You lose the round. :('||
+                        outcome=='Computer chose scissors. You lose the round. :(') {
+                        return winner='Computer Wins'
+                    }
+                    else return winner='No points'
+                }
+                allocatingPoints();
+                function assignPoints() {
+                    if (winner=='Computer Wins') {
+                        return computerPoints+=1
+                    }
+                    else if (winner=='Player Wins') {
+                    return playerPoints+=1
+                    }
+                    else return;
+                }
+                
+                assignPoints();
+                console.log(computerPoints, playerPoints) 
+                     
         });
+        
     }
-    
 initiateRound();
 
 }
@@ -354,5 +439,42 @@ initiateRound();
 playRound();
 
 
+/*   
+function game() {
+for (let i = 1; i < 6; i++) {   
+    playRound();
+let playerPoints=0;
+let computerPoints=0;
+
+function assignPoints() {
+    if (winner=='Computer Wins') {
+        return computerPoints+=1
+    }
+    else if (winner=='Player Wins') {
+    return playerPoints+=1
+    }
+    else return;
+}
+
+assignPoints();
+console.log(computerPoints, playerPoints)   
+}       
+
+function determineGameWinner() {
+    if (playerPoints>computerPoints) {
+        return gameResult='You won the game. Great job!'
+    }
+    else if (computerPoints>playerPoints) {
+        return gameResult='You lost the game. But don\'t let it bother you!'
+    }
+    else return gameResult='The game was a draw. So... you both won?!'
+}
+determineGameWinner();
+
+}
 
 
+
+
+
+*/
