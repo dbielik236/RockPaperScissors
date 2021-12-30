@@ -1,0 +1,30 @@
+
+.buttons {
+    color: brown;
+    display: flex;
+    justify-content: center;
+    margin: 100px;
+    gap: 50px;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    background-color: green;
+}
+
+body {
+    background-color: cornsilk;
+}
+
+.selections {
+    
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+div {
+    font-weight: bold;
+
+}

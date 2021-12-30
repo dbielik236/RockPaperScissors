@@ -182,14 +182,14 @@ function playRound() {
             const container = document.querySelector('#playerSelection');
             const content = document.createElement('div');
             content.classList.add('content');
-            content.textContent = 'Player choice: '+playerSelection;
+            content.textContent = playerSelection;
             container.appendChild(content);
             
             //computer DOM
             const cmptSelection = document.querySelector('#computerSelection');
             const cmptText = document.createElement('div');
             cmptText.classList.add('cmptContent');
-            cmptText.textContent = 'Computer choice: '+computerSelection;
+            cmptText.textContent = computerSelection;
             cmptSelection.appendChild(cmptText);
 
             function determineWinner() {
@@ -274,14 +274,14 @@ function playRound() {
             const container = document.querySelector('#playerSelection');
             const content = document.createElement('div');
             content.classList.add('content');
-            content.textContent = 'Player choice: '+playerSelection;
+            content.textContent = playerSelection;
             container.appendChild(content);
             
             //computer DOM
             const cmptSelection = document.querySelector('#computerSelection');
             const cmptText = document.createElement('div');
             cmptText.classList.add('cmptContent');
-            cmptText.textContent = 'Computer choice: '+computerSelection;
+            cmptText.textContent = computerSelection;
             cmptSelection.appendChild(cmptText);
 
             function determineWinner() {
@@ -364,14 +364,14 @@ function playRound() {
             const container = document.querySelector('#playerSelection');
             const content = document.createElement('div');
             content.classList.add('content');
-            content.textContent = 'Player choice: '+playerSelection;
+            content.textContent = playerSelection;
             container.appendChild(content);
             
             //computer DOM
             const cmptSelection = document.querySelector('#computerSelection');
             const cmptText = document.createElement('div');
             cmptText.classList.add('cmptContent');
-            cmptText.textContent = 'Computer choice: '+computerSelection;
+            cmptText.textContent = computerSelection;
             cmptSelection.appendChild(cmptText);
 
             function determineWinner() {
