@@ -8,18 +8,20 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="winnerBanner"></div>
+    <header class="header">Rock, Paper, Scissors - Play Against the Computer!</header>
+    <div class="start">Choose below to play a round. First to 5 points wins!</div>
     <div class="buttons">
         <button class="rockButton">Rock</button>
         <button class="paperButton">Paper</button>
         <button class="scissorsButton">Scissors</button>
     </div>
+    <div id="winnerBanner"></div>
     <div class="selections">
-        <div id="playerSelection" class="player">Player Selection:</div>
-        <div id="computerSelection">Computer Selection:</div>
+        <div id="playerSelection"><strong>Player Selection:</strong></div>
+        <div id="computerSelection"><strong>Computer Selection:</strong></div>
     
-        <div id="roundResults">Round Result:</div>
-        <div id="runningScore">Running Score:</div>
+        <div id="roundResults"><strong>Round Result:</strong></div>
+        <div id="runningScore"><strong>Running Score:</strong></div>
     </div>
     <div id="finalResult"></div>
     <script src="script.js" defer></script>
