@@ -24,7 +24,12 @@ body {
     gap: 50px;
 }
 
-div {
-    font-weight: bold;
 
+
+
+
+#winnerBanner {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
 }

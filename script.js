@@ -165,17 +165,21 @@ function playRound() {
     let playerPoints = 0;
     let computerPoints = 0;
 
+    
+
     function computerPlay() {
         const computerChoiceArray = ['rock', 'paper', 'scissors'];
         const random = Math.floor(Math.random()*computerChoiceArray.length);
         return computerSelection = computerChoiceArray[random];   
     }
 
+    initiateRound();
     function initiateRound() {
         const rockBtn = document.querySelector('.rockButton');
         rockBtn.addEventListener('click', () => {
             const playerSelection='rock';
 
+            if (playerPoints<5&&computerPoints<5) {
             computerPlay();
             
             //player DOM
@@ -262,12 +266,32 @@ function playRound() {
                 score.classList.add('roundScore');
                 score.textContent = 'Computer points: '+computerPoints+'  Player points: ' +playerPoints;
                 roundScore.appendChild(score);
+                }
+                else return
+
+                if (playerPoints == 5) {
+                    const playerWins = document.querySelector('#winnerBanner');
+                    const youWin = document.createElement('div');
+                    youWin.classList.add('winner');
+                    youWin.textContent = 'You won the game!!!';
+                    playerWins.appendChild(youWin);
+                    }
+                    
+    
+                    if (computerPoints == 5) {
+                    const computerWins = document.querySelector('#winnerBanner');
+                    const youLose = document.createElement('div');
+                    youLose.classList.add('winner');
+                    youLose.textContent = 'Game over: You lost';
+                    computerWins.appendChild(youLose);
+                    }
 
         });    
         const paperBtn = document.querySelector('.paperButton');
         paperBtn.addEventListener('click', () => {
             const playerSelection='paper';
-
+            
+            if (playerPoints<5&&computerPoints<5) {
             computerPlay();
             
             //player DOM
@@ -352,12 +376,33 @@ function playRound() {
                 score.classList.add('roundScore');
                 score.textContent = 'Computer points: '+computerPoints+'  Player points: ' +playerPoints;
                 roundScore.appendChild(score);
+                }
+                else return
+
+                if (playerPoints == 5) {
+                    const playerWins = document.querySelector('#winnerBanner');
+                    const youWin = document.createElement('div');
+                    youWin.classList.add('winner');
+                    youWin.textContent = 'You won the game!!!';
+                    playerWins.appendChild(youWin);
+                    }
+                    
+    
+                    if (computerPoints == 5) {
+                    const computerWins = document.querySelector('#winnerBanner');
+                    const youLose = document.createElement('div');
+                    youLose.classList.add('winner');
+                    youLose.textContent = 'Game over: You lost';
+                    computerWins.appendChild(youLose);
+                    }
+                
         });
 
+        
         const scissorsBtn = document.querySelector('.scissorsButton');
         scissorsBtn.addEventListener('click', () => {
             const playerSelection='scissors';
-
+            if (playerPoints<5&&computerPoints<5) {
             computerPlay();
             
             //player DOM
@@ -443,53 +488,39 @@ function playRound() {
                 score.classList.add('roundScore');
                 score.textContent = 'Computer points: '+computerPoints+'  Player points: ' +playerPoints;
                 roundScore.appendChild(score);
-                     
+                }
+                else return
+
+                if (playerPoints == 5) {
+                const playerWins = document.querySelector('#winnerBanner');
+                const youWin = document.createElement('div');
+                youWin.classList.add('winner');
+                youWin.textContent = 'You won the game!!!';
+                playerWins.appendChild(youWin);
+                }
+                
+
+                if (computerPoints == 5) {
+                const computerWins = document.querySelector('#winnerBanner');
+                const youLose = document.createElement('div');
+                youLose.classList.add('winner');
+                youLose.textContent = 'Game over: You lost';
+                computerWins.appendChild(youLose);
+                }
+                
         });
-        
+    
     }
-initiateRound();
 
 }
 
-playRound();
-
-
-/*   
-function game() {
-for (let i = 1; i < 6; i++) {   
+function game () {
     playRound();
-let playerPoints=0;
-let computerPoints=0;
-
-function assignPoints() {
-    if (winner=='Computer Wins') {
-        return computerPoints+=1
-    }
-    else if (winner=='Player Wins') {
-    return playerPoints+=1
-    }
-    else return;
+    
 }
 
-assignPoints();
-console.log(computerPoints, playerPoints)   
-}       
-
-function determineGameWinner() {
-    if (playerPoints>computerPoints) {
-        return gameResult='You won the game. Great job!'
-    }
-    else if (computerPoints>playerPoints) {
-        return gameResult='You lost the game. But don\'t let it bother you!'
-    }
-    else return gameResult='The game was a draw. So... you both won?!'
-}
-determineGameWinner();
-
-}
+game ();
 
 
 
 
-
-*/
